@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="John Doe">
+
+
+
+
+
+
+
+<title>b | gxblog</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=Roboto+Mono&display=swap');
+</style>
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/frame.js"></script>
+    
+
+
+
+
+
+
+
+
+
+
+  <meta name="generator" content="Hexo 6.3.0"></head>
+  <body>
+    <div class="mask-border">
+    </div>
+
+    <div class="wrapper">
+
+      <div class="header">
+  <div class="flex-container">
+    <div class="header-inner">
+      <div class="site-brand-container">
+        <a href="/">
+          
+            Gxblog
+          
+        </a>
+      </div>
+      <div id="menu-btn" class="menu-btn" onclick="toggleMenu()">
+        Menu
+      </div>
+      <nav class="site-nav">
+        <ul class="menu-list">
+          
+            
+              <li class="menu-item">
+                <a href="/">Home</a>
+              </li> 
+                   
+          
+            
+              <li class="menu-item">
+                <a href="/archives/">Archive</a>
+              </li> 
+                   
+          
+            
+              <li class="menu-item">
+                <a href="/categories/gallery/">Gallery</a>
+              </li> 
+                   
+          
+          
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main">
+        <div class="flex-container">
+          <article id="post">
+
+  
+    <div class="post-head">
+    <div class="post-info">
+        <div class="tag-list">
+            
+        </div>
+        <div class="post-title">
+            
+            
+                b
+            
+            
+        </div>
+        <span class="post-date">
+            Sep 27, 2022
+        </span>
+    </div>
+    <div class="post-img">
+        
+            <div class="h-line-primary"></div>
+              
+    </div>
+</div>
+    <div class="post-content">
+    <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><ul>
+<li>正则表达式包括<code>普通字符</code>（例如 a 到 z 、0 到 9、标点符号等的所有非元字符）和<code>特殊字符</code>（<code>元字符</code>）</li>
+<li>正则表达式<code>描述、匹配</code>一系列<code>符合某个句法规则</code>的<code>字符/字符串</code></li>
+<li>加转义符号<code>\</code>把元字符变为普通字符</li>
+</ul>
+<p>例如：</p>
+<ol>
+<li><code>今天天气真+好</code>，匹配<code>今天天气真好</code>、<code>今天天气真好好</code>、<code>今天天气真好坏好</code> 等，<code>+</code> 为元字符，代表前面的字符串必须至少出现一次（1次或多次）。</li>
+<li><code>今天天气真*好</code>，匹配 <code>今天真好</code>、<code>今天天气真好</code>等，<code>*</code> 代表前面的字符串可以不出现，也可以出现任意次（0次、1次或多次）。</li>
+<li><code>colou?r</code> ，匹配 <code>color</code> 或 <code>colour</code> 等，? 代表前面的字符串最多出现一次（0次或1次）。</li>
+</ol>
+<h2 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h2><table>
+<thead>
+<tr>
+<th>符号</th>
+<th>匹配的字符</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>[ABC]</td>
+<td>字符A、B、C</td>
+</tr>
+<tr>
+<td>[^ABC]</td>
+<td>非A、B、C</td>
+</tr>
+<tr>
+<td>[A-Z]</td>
+<td>区间A到Z内的字符</td>
+</tr>
+<tr>
+<td>[A-Za-z0-9_]</td>
+<td>3个区间加一个下划线之内的字符</td>
+</tr>
+<tr>
+<td>.</td>
+<td>除换行符外的所有字符。等价于[^\n\r]</td>
+</tr>
+<tr>
+<td>\s</td>
+<td>所有空白符（非打印字符）</td>
+</tr>
+<tr>
+<td>\S</td>
+<td>非空白符</td>
+</tr>
+<tr>
+<td>[\s\S]</td>
+<td>所有字符</td>
+</tr>
+<tr>
+<td>\w</td>
+<td>字母数字下划线。等价于 [A-Za-z0-9_]</td>
+</tr>
+<tr>
+<td>\b</td>
+<td>单词边界，即单词与空格连接处。例如，er\b 匹配 never 的 er，不匹配 verb 的 er</td>
+</tr>
+<tr>
+<td>\B</td>
+<td>非单词边界。er\B 匹配 verb 的 er，不匹配 never 的 er</td>
+</tr>
+<tr>
+<td>{n}</td>
+<td>n 为非负整数，匹配确定的 n 次。o{2} 不匹配Bob 中的 o，匹配 food 中的 oo</td>
+</tr>
+<tr>
+<td>{n,}</td>
+<td>n 为非负整数，至少匹配 n 次</td>
+</tr>
+<tr>
+<td>{n,m}</td>
+<td>n,m 为非负整数。n&lt;&#x3D;m：至少匹配 n 次，至多匹配 m 次</td>
+</tr>
+</tbody></table>
+<h2 id="修饰符（标记）"><a href="#修饰符（标记）" class="headerlink" title="修饰符（标记）"></a>修饰符（标记）</h2><p>位于正则表达式外<br>格式：<code>/pattern/flags</code><br>例：<code>/正则表达式/g</code>表示查找字符串中所有的匹配项。</p>
+<table>
+<thead>
+<tr>
+<th>修饰符</th>
+<th>含义</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>i</td>
+<td>ignore</td>
+<td>不区分大小写</td>
+</tr>
+<tr>
+<td>g</td>
+<td>global</td>
+<td>全局匹配</td>
+</tr>
+<tr>
+<td>m</td>
+<td>multiline</td>
+<td>多行匹配，使边界字符^和$匹配每一行的开头和结尾</td>
+</tr>
+<tr>
+<td>s</td>
+<td>使特殊字符.包含换行符</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p>&#x2F;<code>\b[\w.%+-]+@[\w.-]+\.[a-zA-Z]&#123;2,6&#125;\b</code>&#x2F;g<br>匹配字符串 “abcd <a href="mailto:&#116;&#101;&#x73;&#x74;&#x40;&#101;&#109;&#x61;&#x69;&#108;&#46;&#99;&#111;&#109;">&#116;&#101;&#x73;&#x74;&#x40;&#101;&#109;&#x61;&#x69;&#108;&#46;&#99;&#111;&#109;</a> 1234”<br>中的网址：”<a href="mailto:&#x74;&#x65;&#x73;&#116;&#x40;&#x65;&#x6d;&#97;&#x69;&#108;&#x2e;&#99;&#x6f;&#109;">&#x74;&#x65;&#x73;&#116;&#x40;&#x65;&#x6d;&#97;&#x69;&#108;&#x2e;&#99;&#x6f;&#109;</a>“</p>
+<h2 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h2><table>
+<thead>
+<tr>
+<th>优先级</th>
+<th>运算符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>|	转义符</td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>( ) , [ ]</td>
+<td>圆括号和方括号</td>
+</tr>
+<tr>
+<td>2</td>
+<td>* , + , ? , {n} , {n,} , {n,m}</td>
+<td>限定符</td>
+</tr>
+<tr>
+<td>3</td>
+<td>^ , $ , 任何字符</td>
+<td>位置和顺序</td>
+</tr>
+</tbody></table>
+<h2 id="匹配规则"><a href="#匹配规则" class="headerlink" title="匹配规则"></a>匹配规则</h2><h4 id="①基本模式匹配"><a href="#①基本模式匹配" class="headerlink" title="①基本模式匹配"></a>①基本模式匹配</h4><p><code>模式</code>，一组<code>描述字符串特征</code>的<code>字符</code>，是正则表达式<code>最基本的元素</code></p>
+<p>例如：模式<code>^once</code> 包含一个元字符<code>^</code>，表示该模式只匹配以<code>once</code>开头的字符串。<br>该模式与字符串<code>once upon a time</code>匹配，与<code>There once was a man</code>不匹配。</p>
+<h4 id="②字符簇"><a href="#②字符簇" class="headerlink" title="②字符簇"></a>②字符簇</h4><p><code>字符簇</code>是一种更自由地描述模式的方法。</p>
+<ul>
+<li>例1，<code>[AaEeIiOoUu]</code>是一个表示所有元音字符的字符簇。</li>
+<li>例2，用模式<code>^[a-z][0-9]$</code>匹配<code>z2</code>、<code>t6</code>或<code>g7</code>，而不是<code>ab2</code>、<code>r2d3</code>或<code>b52</code> 。</li>
+<li>例3，模式<code>^.5$</code>与任何<code>两个字符的</code>、<code>以数字5结尾</code>和<code>以非&quot;换行&quot;字符开头</code>的字符串匹配。</li>
+</ul>
+<h4 id="③确定重复出现"><a href="#③确定重复出现" class="headerlink" title="③确定重复出现"></a>③确定重复出现</h4><ul>
+<li>元字符<code>?</code>与<code>&#123;0,1&#125;</code>是相等的，它们都代表<code>0个或1个前面的内容</code>或<code>前面的内容是可选的</code></li>
+<li><code>*</code> 与<code>&#123;0,&#125;</code>是相等的，都代表 <code>0 个或多个前面的内容</code></li>
+<li><code>+</code> 与<code>&#123;1,&#125;</code>是相等的，表示 <code>1 个或多个前面的内容</code></li>
+</ul>
+
+</div> 
+
+<script>
+    window.onload = detectors();
+</script>
+    <div class="post-footer">
+    <div class="h-line-primary"></div>
+    <nav class="post-nav">
+        <div class="prev-item">
+           
+                <div class="icon arrow-left"></div>
+                <div class="post-link">
+                    <a href="/2023/10/22/q/">Prev</a>
+                </div>
+            
+        </div>
+        <div class="next-item">
+            
+        </div>
+    </nav>
+</div>
+
+    
+      <div class="post-comment">
+
+     
+
+     
+    
+    
+
+</div>
+     
+  
+</article>
+        </div>
+      </div>
+      
+      <div class="footer">
+    <div class="flex-container">
+        <div class="footer-text">
+            
+            
+            
+                Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> & <a target="_blank" rel="noopener" href="https://github.com/zoeingwingkei/frame/">Frame</a>
+                
+        </div>
+    </div>
+</div>
+
+    </div>
+
+    
+    
+
+  </body>
+</html>
