@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="John Doe">
+
+
+
+
+
+
+
+<title>SAT问题 | gxblog</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=Roboto+Mono&display=swap');
+</style>
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/frame.js"></script>
+    
+
+
+
+
+
+
+
+
+
+
+  <meta name="generator" content="Hexo 6.3.0"></head>
+  <body>
+    <div class="mask-border">
+    </div>
+
+    <div class="wrapper">
+
+      <div class="header">
+  <div class="flex-container">
+    <div class="header-inner">
+      <div class="site-brand-container">
+        <a href="/">
+          
+            Gxblog
+          
+        </a>
+      </div>
+      <div id="menu-btn" class="menu-btn" onclick="toggleMenu()">
+        Menu
+      </div>
+      <nav class="site-nav">
+        <ul class="menu-list">
+          
+            
+              <li class="menu-item">
+                <a href="/">Home</a>
+              </li> 
+                   
+          
+            
+              <li class="menu-item">
+                <a href="/archives/">Archive</a>
+              </li> 
+                   
+          
+            
+              <li class="menu-item">
+                <a href="/categories/gallery/">Gallery</a>
+              </li> 
+                   
+          
+          
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main">
+        <div class="flex-container">
+          <article id="post">
+
+  
+    <div class="post-head">
+    <div class="post-info">
+        <div class="tag-list">
+            
+        </div>
+        <div class="post-title">
+            
+            
+                SAT问题
+            
+            
+        </div>
+        <span class="post-date">
+            Aug 12, 2022
+        </span>
+    </div>
+    <div class="post-img">
+        
+            <div class="h-line-primary"></div>
+              
+    </div>
+</div>
+    <div class="post-content">
+    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>所有的问题都可以被转化为数学问题模型，SAT问题就是其中的一个模型</p>
+<p>SAT的问题被证明是NP-Hard的问题，目前解决该问题的方法主要有完备的方法和不完备的方法两大类</p>
+<p>完备的方法优点是保证能正确地判断SAT问题的可满足性，但其计算效率很低，平均的计算时间为多项式阶，最差的情况计算时间为指数阶，不适用于求解大规模的SAT问题</p>
+<p>不完备的方法的优点是求解的时间比完备的方法快得多，但在很少数的情况下不能正确地判断SAT问题的可满足性</p>
+<p>传统的方法有：枚举法、局部搜索法和贪婪算法等，但由于搜索空间大，问题一般难以求解</p>
+<p>对于像SAT一类的NP-Hard问题，采用一些现代启发式方法如演化算法往往较为有效</p>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>SAT(<code>sat</code>isfiability)问题是：</p>
+<ul>
+<li>命题可满足性问题</li>
+<li>布尔可满足性问题</li>
+</ul>
+<p>在计算机科学的许多领域都重要：</p>
+<ul>
+<li>理论计算机科学</li>
+<li>复杂性理论</li>
+<li>算法</li>
+<li>密码学</li>
+<li>人工智能</li>
+</ul>
+<p>SAT问题被称为<code>命题可满足性问题</code>，因为它的</p>
+<h2 id="研究对象"><a href="#研究对象" class="headerlink" title="研究对象"></a>研究对象</h2><p>是<strong>命题逻辑公式(formula)：(p1∨﹁p2)∧(﹁p1∨﹁p2∨p3)∧(﹁p3)</strong></p>
+<p>(<code>p1</code>∨﹁<code>p2</code>)∧(﹁<code>p1</code>∨﹁<code>p2</code>∨<code>p3</code>)∧(﹁<code>p3</code>)<br><strong>变量</strong>：p1,p2,… → <strong>文字(literal)</strong></p>
+<p>(p1∨<code>﹁</code>p2)∧(<code>﹁</code>p1∨<code>﹁</code>p2∨p3)∧(<code>﹁</code>p3)<br><strong>运算符</strong>：﹁</p>
+<p>(p1<code>∨</code>﹁p2)∧(﹁p1<code>∨</code>﹁p2<code>∨</code>p3)∧(﹁p3)<br><strong>运算符</strong>：∨：or → 作用于变量之间 → <strong>(﹁p1∨﹁p2∨p3)</strong> → <strong>子句(clause)</strong></p>
+<ul>
+<li>空子句(empty clause)：没有文字的子句</li>
+<li>单位子句(unit clause)：只有一个文字的子句</li>
+</ul>
+<p>(p1∨﹁p2)<code>∧</code>(﹁p1∨﹁p2∨p3)<code>∧</code>(﹁p3)<br><strong>运算符</strong>：∧：and → 作用于子句之间 → <strong>子句∧子句</strong> → <strong>公式(formula)</strong></p>
+<ul>
+<li><p>空公式：空集对应的公式</p>
+</li>
+<li><p>C：the resolvent(预解式) of C1 and C2：C &#x3D; ( C1 - { p } ) U ( C2 - { pc } )</p>
+<blockquote>
+<p>若存在 p 属于 C1 , p 逆属于 C2 ,则存在子句 C 为子句 C1 与 C2 的 resolvent。C1、C2 称为 C 的 parent clauses</p>
+</blockquote>
+</li>
+</ul>
+<p><strong>总结：literal → clause → formula.</strong> 可以写成两种形式：</p>
+<ul>
+<li>合取范式：(p1∨﹁p2)∧(﹁p1∨﹁p2∨p3)∧(﹁p3)</li>
+<li>集合形式：{ { p1 , ﹁p2 } , { ﹁p1 , ﹁p2 , p3 } , { ﹁p3 } }</li>
+</ul>
+<h2 id="语义-Semantics"><a href="#语义-Semantics" class="headerlink" title="语义 Semantics"></a>语义 Semantics</h2><p>若为命题逻辑公式中的每个变量赋一个逻辑值（真&#x2F;假），<br>逻辑值也会相应地扩展到子句，<br>并继续扩展到命题逻辑公式。<br>以上给变量赋值的过程称为 <code>Interpretation</code><br><strong>An interpretation is a function</strong>  </p>
+<ul>
+<li><p>函数 ⨚：</p>
+<ul>
+<li>literal：⨚ ( p ) &#x3D; T，⨚ ( p ) &#x3D; F</li>
+<li>clause：<ul>
+<li>⨚ ( C ) &#x3D; T：at least one p ∈ C，⨚ ( p ) &#x3D; T</li>
+<li>⨚ ( C ) &#x3D; F：for all p ∈ C，⨚ ( p ) &#x3D; F</li>
+</ul>
+</li>
+<li>formula：<ul>
+<li>⨚ ( A ) &#x3D; T：for all C ∈ A，⨚ ( C ) &#x3D; T</li>
+<li>⨚ ( A ) &#x3D; F：at least one C ∈ A，⨚ ( C ) &#x3D; T</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>如果存在一个 <code>interpretation</code> 使命题逻辑公式为真（ <code>⨚ ( A ) = T</code> ），那么公式 A 是<code>可满足的</code>；反之是不可满足的。</p>
+</li>
+<li><p>如果一个 <code>interpretation</code> 只需给公式中的部分变量赋逻辑值，就可以得出公式的逻辑值，则这个 <code>interpretation</code> 称为 <code>partial interpretation</code></p>
+</li>
+<li><p><strong>单位子句定则</strong>：</p>
+<ul>
+<li>单位子句 C &#x3D; { p } 属于公式 A；存在 <code>partial interpretation ⨚ </code>没有对文字 p 赋值，可以通过在 ⨚ 中添加 p 赋值构建一个 <code>interpretation ⨚&#39;</code>，⨚’ ( p ) &#x3D; T。</li>
+<li>通过将 <code>A</code> 中的单位子句删除，并将剩余子句中的 <code>p 逆</code>删除构建公式 <code>A&#39;</code></li>
+<li><strong>定理：</strong> 由<code>单位子句定则</code>得到的 <code>A&#39;</code>，如果 <code>A&#39;</code> 是可满足的，那么 <code>A</code> 就是可满足的</li>
+</ul>
+</li>
+<li><p><strong>分解 ( Resolution ) 定则：</strong></p>
+<p> C1、C2 是两个子句，且有 p ∈ C1，p 逆 ∈ C2，C1、C2的 resolvent 是子句 C &#x3D; ( C1 - { p } ) U ( C2 - { p 逆 } )。C1、C2 是 C 的 parent clauses.</p>
+</li>
+<li><p>定理： 只有 C 的 parent clauses C1、C2 都可满足时，C 才可满足</p>
+</li>
+<li><p>定理： 空子句是不可满足的</p>
+</li>
+<li><p>定理： 空公式是可满足的</p>
+</li>
+</ul>
+
+</div> 
+
+<script>
+    window.onload = detectors();
+</script>
+    <div class="post-footer">
+    <div class="h-line-primary"></div>
+    <nav class="post-nav">
+        <div class="prev-item">
+           
+                <div class="icon arrow-left"></div>
+                <div class="post-link">
+                    <a href="/2022/09/27/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">Prev</a>
+                </div>
+            
+        </div>
+        <div class="next-item">
+            
+                <div class="icon arrow-right"></div>
+                <div class="post-link">
+                  <a href="/2022/08/05/typescript/">Next</a>  
+                </div>  
+            
+        </div>
+    </nav>
+</div>
+
+    
+      <div class="post-comment">
+
+     
+
+     
+    
+    
+
+</div>
+     
+  
+</article>
+        </div>
+      </div>
+      
+      <div class="footer">
+    <div class="flex-container">
+        <div class="footer-text">
+            
+            
+            
+                Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> & <a target="_blank" rel="noopener" href="https://github.com/zoeingwingkei/frame/">Frame</a>
+                
+        </div>
+    </div>
+</div>
+
+    </div>
+
+    
+    
+
+  </body>
+</html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="John Doe">
+
+
+
+
+
+
+
+<title>typescript | gxblog</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=Roboto+Mono&display=swap');
+</style>
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/frame.js"></script>
+    
+
+
+
+
+
+
+
+
+
+
+  <meta name="generator" content="Hexo 6.3.0"></head>
+  <body>
+    <div class="mask-border">
+    </div>
+
+    <div class="wrapper">
+
+      <div class="header">
+  <div class="flex-container">
+    <div class="header-inner">
+      <div class="site-brand-container">
+        <a href="/">
+          
+            Gxblog
+          
+        </a>
+      </div>
+      <div id="menu-btn" class="menu-btn" onclick="toggleMenu()">
+        Menu
+      </div>
+      <nav class="site-nav">
+        <ul class="menu-list">
+          
+            
+              <li class="menu-item">
+                <a href="/">Home</a>
+              </li> 
+                   
+          
+            
+              <li class="menu-item">
+                <a href="/archives/">Archive</a>
+              </li> 
+                   
+          
+            
+              <li class="menu-item">
+                <a href="/categories/gallery/">Gallery</a>
+              </li> 
+                   
+          
+          
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main">
+        <div class="flex-container">
+          <article id="post">
+
+  
+    <div class="post-head">
+    <div class="post-info">
+        <div class="tag-list">
+            
+                
+                    <span class="post-tag">
+                        <a href="/tags/%E9%9D%92%E8%AE%AD%E8%90%A5/">
+                            青训营
+                        </a>
+                    </span>    
+                           
+            
+        </div>
+        <div class="post-title">
+            
+            
+                typescript
+            
+            
+        </div>
+        <span class="post-date">
+            Aug 5, 2022
+        </span>
+    </div>
+    <div class="post-img">
+        
+            <div class="h-line-primary"></div>
+              
+    </div>
+</div>
+    <div class="post-content">
+    <h2 id="​区别与联系"><a href="#​区别与联系" class="headerlink" title="​区别与联系"></a>​区别与联系</h2><ul>
+<li>JavaScript<ul>
+<li>动态类型</li>
+<li>弱类型</li>
+</ul>
+</li>
+<li>TypeScript<ul>
+<li>包含于兼容所有JS特性，支持共存</li>
+<li>支持渐进式引入与升级</li>
+<li>可读性增强：基于语法解析TSDos，ide增强</li>
+<li>可维护性增强：在编译阶段暴露大部分错误&#x3D;&gt;多人合作的大型项目中提高稳定性和开发效率</li>
+<li>静态类型</li>
+<li>弱类型语言</li>
+<li>JS的超集</li>
+</ul>
+</li>
+</ul>
+<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><p>JS：</p>
+<pre><code>const q = &#39;string&#39;;
+/*字符串*/
+const w = 1;
+/*数字*/
+const e = true;
+/*布尔值*/
+const r = null;
+/*null*/
+const t = undefined;
+/*未定义*/
+</code></pre>
+<p>TS：</p>
+<pre><code>属性名: 属性类型 = 属性值;
+const q: string = &#39;string&#39;;
+/*字符串*/
+const w: number = 1;
+/*数字*/
+const e: boolean = true;
+/*布尔值*/
+const e: null = null;
+/*null*/
+const t: undefined = undefined;
+/*undefined*/
+</code></pre>
+<h2 id="对象类型"><a href="#对象类型" class="headerlink" title="对象类型"></a>对象类型</h2><pre><code>const bytedancer: IBytedancer = &#123;
+jobID: 9303245,
+name: &#39;Lin&#39;,
+gender: &#39;man&#39;,
+age: 20,
+&#125;
+/*对象实例*/
+​
+interface IBytedancer &#123;
+属性名: 属性类型
+readonly jobID: number; /*只读属性：不可在对象初始化    外赋值*/
+name: string;
+gender: &#39;man&#39; | &#39;woman&#39; | &#39;other&#39;;
+age: number;
+hobby?: string; /*可选属性: 该属性可以不存在*/
+[key: string]: any; /*任意属性: 自定义属性必须是该属    性的子类型*/
+&#125;
+/*对象定义*/
+</code></pre>
+<h2 id="补充类型"><a href="#补充类型" class="headerlink" title="补充类型"></a>补充类型</h2><ul>
+<li>空类型，表示无赋值</li>
+<li>任意类型，是所有类型的子类型</li>
+<li>枚举类型，支持枚举值到枚举名的正、反向映射</li>
+</ul>
+<h2 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h2><p>不预先指定具体的类型，而在使用的时候再指定类型的一种特性</p>
+<ul>
+<li><p>泛型接口&amp;多泛型</p>
+<pre><code>  interface IX&lt;T, U&gt; &#123;
+      key: T;
+      val: U;
+  &#125;
+</code></pre>
+</li>
+<li><p>泛型类</p>
+<pre><code>  class IMan&lt;T&gt; &#123;
+      instance: T;
+  &#125;
+</code></pre>
+</li>
+<li><p>泛型别名</p>
+<pre><code>  type ITypeArr&lt;T&gt; = Array&lt;T&gt;
+</code></pre>
+</li>
+<li><p>泛型约束：限制泛型必须符合字符串</p>
+</li>
+<li><p>泛型参数默认类型</p>
+</li>
+</ul>
+<h4 id="字符串-数字-字面量"><a href="#字符串-数字-字面量" class="headerlink" title="字符串&#x2F;数字 字面量"></a>字符串&#x2F;数字 字面量</h4><p>允许指定字符串&#x2F;数字必须的固定值</p>
+<h2 id="高级类型"><a href="#高级类型" class="headerlink" title="高级类型"></a>高级类型</h2><h4 id="联合-交叉类型"><a href="#联合-交叉类型" class="headerlink" title="联合&#x2F;交叉类型"></a>联合&#x2F;交叉类型</h4><ul>
+<li>联合类型: IA|IB; 联合类型表示一个值可以是几种类型之一</li>
+<li>交叉类型: IA&IB; 多种类型叠加到一起成为一种类型，它包含了所需的所有类型的特性</li>
+</ul>
+<h4 id="类型保护与类型守卫"><a href="#类型保护与类型守卫" class="headerlink" title="类型保护与类型守卫"></a>类型保护与类型守卫</h4><ul>
+<li>类型守卫：定义一个函数，它的返回值是一个类型谓词，生效范围为子作用域</li>
+<li>联合类型+类型保护&#x3D;自动类型推断</li>
+<li>索引类型：关键字【keyof】，相当于取值对象中的所有Key组成的字符串字面量</li>
+</ul>
+<h2 id="工程应用"><a href="#工程应用" class="headerlink" title="工程应用"></a>工程应用</h2><h4 id="Webpack"><a href="#Webpack" class="headerlink" title="Webpack"></a>Webpack</h4><ul>
+<li>配置webpack loader相关配置</li>
+<li>配置tsconfig.js相关文件</li>
+<li>运行webpack启动，打包</li>
+<li>loader处理ts文件时，会自动进行编译与类型检查</li>
+</ul>
+<h4 id="使用TSC编译"><a href="#使用TSC编译" class="headerlink" title="使用TSC编译"></a>使用TSC编译</h4><ul>
+<li>安装node与npm</li>
+<li>使用npm安装tsc</li>
+<li>配置tsconfig.js文件</li>
+<li>使用tsc运行编译得到js文件</li>
+</ul>
+
+</div> 
+
+<script>
+    window.onload = detectors();
+</script>
+    <div class="post-footer">
+    <div class="h-line-primary"></div>
+    <nav class="post-nav">
+        <div class="prev-item">
+           
+                <div class="icon arrow-left"></div>
+                <div class="post-link">
+                    <a href="/2022/08/12/sat%E9%97%AE%E9%A2%98/">Prev</a>
+                </div>
+            
+        </div>
+        <div class="next-item">
+            
+        </div>
+    </nav>
+</div>
+
+    
+      <div class="post-comment">
+
+     
+
+     
+    
+    
+
+</div>
+     
+  
+</article>
+        </div>
+      </div>
+      
+      <div class="footer">
+    <div class="flex-container">
+        <div class="footer-text">
+            
+            
+            
+                Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> & <a target="_blank" rel="noopener" href="https://github.com/zoeingwingkei/frame/">Frame</a>
+                
+        </div>
+    </div>
+</div>
+
+    </div>
+
+    
+    
+
+  </body>
+</html>
