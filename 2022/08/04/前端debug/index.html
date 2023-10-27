@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="John Doe">
+
+
+
+
+
+
+
+<title>前端debug | gxblog</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=Roboto+Mono&display=swap');
+</style>
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/frame.js"></script>
+    
+
+
+
+
+
+
+
+
+
+
+  <meta name="generator" content="Hexo 6.3.0"></head>
+  <body>
+    <div class="mask-border">
+    </div>
+
+    <div class="wrapper">
+
+      <div class="header">
+  <div class="flex-container">
+    <div class="header-inner">
+      <div class="site-brand-container">
+        <a href="/">
+          
+            Gxblog
+          
+        </a>
+      </div>
+      <div id="menu-btn" class="menu-btn" onclick="toggleMenu()">
+        Menu
+      </div>
+      <nav class="site-nav">
+        <ul class="menu-list">
+          
+            
+              <li class="menu-item">
+                <a href="/">Home</a>
+              </li> 
+                   
+          
+            
+              <li class="menu-item">
+                <a href="/archives/">Archive</a>
+              </li> 
+                   
+          
+            
+              <li class="menu-item">
+                <a href="/categories/gallery/">Gallery</a>
+              </li> 
+                   
+          
+          
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main">
+        <div class="flex-container">
+          <article id="post">
+
+  
+    <div class="post-head">
+    <div class="post-info">
+        <div class="tag-list">
+            
+                
+                    <span class="post-tag">
+                        <a href="/tags/%E9%9D%92%E8%AE%AD%E8%90%A5/">
+                            青训营
+                        </a>
+                    </span>    
+                           
+            
+        </div>
+        <div class="post-title">
+            
+            
+                前端debug
+            
+            
+        </div>
+        <span class="post-date">
+            Aug 4, 2022
+        </span>
+    </div>
+    <div class="post-img">
+        
+            <div class="h-line-primary"></div>
+              
+    </div>
+</div>
+    <div class="post-content">
+    <h2 id="前端debug的特点："><a href="#前端debug的特点：" class="headerlink" title="前端debug的特点："></a>前端debug的特点：</h2><ul>
+<li>多平台：浏览器、hybrid、node.js、小程序、桌面应用等</li>
+<li>多环境：本地开发环境、线上环境</li>
+<li>多工具：chrome devTools、Charles、Spy-Debugger、Whistle、vConsole</li>
+<li>多技巧：Console、BreakPoint、sourceMap、代理等</li>
+</ul>
+<h2 id="Chrome-Devtools"><a href="#Chrome-Devtools" class="headerlink" title="Chrome Devtools"></a>Chrome Devtools</h2><p>Elements | Console | Source | Performance | Network</p>
+<h4 id="动态修改元素和样式"><a href="#动态修改元素和样式" class="headerlink" title="动态修改元素和样式"></a>动态修改元素和样式</h4><ul>
+<li>点击.cls开启动态修改元素的class</li>
+<li>输入字符串可以动态的给元素添加类名</li>
+<li>勾选&#x2F;取消类名可以动态的查看类名生效效果</li>
+<li>点击具体的样式值（字号&#x2F;颜色&#x2F;宽度&#x2F;高度）可以进行编辑，浏览器内容区域实时预览</li>
+<li>Computed下点击样式里的箭头可以跳转到styles面板中的css规则<blockquote>
+<p>强制激活伪类的方法：<br>  1.选中具有伪类的元素，点击：hov<br>  2.DOM树右键菜单，选择Force State</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="Sorce-Tab"><a href="#Sorce-Tab" class="headerlink" title="Sorce Tab"></a>Sorce Tab</h4><ul>
+<li>区域1：页面资源文件目录树</li>
+<li>区域2：代码预览区域</li>
+<li>区域3：Debug工具栏<ul>
+<li>暂停\继续</li>
+<li>单步跳过</li>
+<li>进入函数</li>
+<li>跳出函数</li>
+<li>单步执行</li>
+<li>激活（关闭）所有断点</li>
+<li>代码执行异常处自动</li>
+</ul>
+</li>
+<li>区域4：断点调试器</li>
+</ul>
+<h4 id="断点与Watch"><a href="#断点与Watch" class="headerlink" title="断点与Watch"></a>断点与Watch</h4><ul>
+<li>使用关键字debugger或代码预览区域的行号可以设置断点</li>
+<li>执行到断点处时代码暂停执行</li>
+<li>展开Breakpoints列表可以查看断点列表，勾选&#x2F;取消可以激活&#x2F;禁用对应断点</li>
+<li>暂停状态下，鼠标hover变量可以查看变量的值</li>
+<li>在调试器Watch右侧点击+可以添加对应变量的监控，查看该变量的值</li>
+</ul>
+<h4 id="Scope与Call-Stack"><a href="#Scope与Call-Stack" class="headerlink" title="Scope与Call Stack"></a>Scope与Call Stack</h4><ul>
+<li>展开Scope可以查看作用域列表（包含闭包）<blockquote>
+<p>闭包可以参考这里</p>
+</blockquote>
+</li>
+<li>展开Call Stack可以查看当前javasScript代码的调用栈<blockquote>
+<p>关于调用栈可以参考这里</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="调试压缩后的代码"><a href="#调试压缩后的代码" class="headerlink" title="调试压缩后的代码"></a>调试压缩后的代码</h2><p>前端代码天生具有“开源”属性，出于安全考虑，上线之前JavaScript代码通常会被压缩，压缩后的代码只有一行，变量使用’a’,’b’等替换，整体变得不可阅读。</p>
+<h4 id="Source-Map"><a href="#Source-Map" class="headerlink" title="Source Map"></a>Source Map</h4><p>mappings字段存储了源文件和Source Map的映射</p>
+<ul>
+<li>英文、表示源码及压缩代码的位置关联</li>
+<li>逗号，分隔一行代码中的内容</li>
+<li>分号，代表换行</li>
+<li>映射</li>
+</ul>
+
+</div> 
+
+<script>
+    window.onload = detectors();
+</script>
+    <div class="post-footer">
+    <div class="h-line-primary"></div>
+    <nav class="post-nav">
+        <div class="prev-item">
+           
+                <div class="icon arrow-left"></div>
+                <div class="post-link">
+                    <a href="/2022/08/05/typescript/">Prev</a>
+                </div>
+            
+        </div>
+        <div class="next-item">
+            
+        </div>
+    </nav>
+</div>
+
+    
+      <div class="post-comment">
+
+     
+
+     
+    
+    
+
+</div>
+     
+  
+</article>
+        </div>
+      </div>
+      
+      <div class="footer">
+    <div class="flex-container">
+        <div class="footer-text">
+            
+            
+            
+                Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> & <a target="_blank" rel="noopener" href="https://github.com/zoeingwingkei/frame/">Frame</a>
+                
+        </div>
+    </div>
+</div>
+
+    </div>
+
+    
+    
+
+  </body>
+</html>
