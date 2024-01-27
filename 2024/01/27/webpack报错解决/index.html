@@ -14,7 +14,7 @@
 
 
 
-<title>clash for windows用户的android studio代理配置问题解决 | gxblog</title>
+<title>Webpack报错：&#34;node:&#34;URI解决 | gxblog</title>
 
 
 
@@ -120,25 +120,38 @@
         <div class="post-title">
             
             
-                clash for windows用户的android studio代理配置问题解决
+                Webpack报错：&#34;node:&#34;URI解决
             
             
         </div>
         <span class="post-date">
-            Oct 22, 2023
+            Jan 27, 2024
         </span>
     </div>
     <div class="post-img">
         
-            <img src="https://raw.githubusercontent.com/ga0xia0b0/ga0xia0b0/main/2023/10/upgit_20231022_1697965829.png" alt="featured_image">
+            <img src="https://raw.githubusercontent.com/ga0xia0b0/ga0xia0b0/main/2024/01/upgit_20240127_1706339134.png" alt="featured_image">
               
     </div>
 </div>
     <div class="post-content">
-    <p>正确的配置既不是no proxy，也不是某某国内代理，而是<br><img src="https://raw.githubusercontent.com/ga0xia0b0/ga0xia0b0/main/2023/10/upgit_20231022_1697965829.png" alt="upgit_20231022_1697965829.png"><br>这里选择自动检测，并在系统的gradle.properties文件（一般情况下路径是C:\Users\用户名.gradle\）中添加clash的代理地址（ip+端口），如下：<br><img src="https://raw.githubusercontent.com/ga0xia0b0/ga0xia0b0/main/2023/10/upgit_20231022_1697965851.png" alt="upgit_20231022_1697965851.png"><br>ip一般都是127.0.0.1，端口号在clash—&gt;常规—&gt;主程序默认端口中看。<br><img src="https://raw.githubusercontent.com/ga0xia0b0/ga0xia0b0/main/2023/10/upgit_20231022_1697967143.png" alt="upgit_20231022_1697967143.png"></p>
-<blockquote>
-<p>ps.水印是我的csdn，先发在那里但审核不通过</p>
-</blockquote>
+    <p>next.js 项目运行报错</p>
+<p><img src="https://raw.githubusercontent.com/ga0xia0b0/ga0xia0b0/main/2024/01/upgit_20240127_1706339134.png" alt="upgit_20240127_1706339134.png"></p>
+<ul>
+<li><p>原因</p>
+<p>在客户端组件中使用了 “node:” URI。在我的项目中是 lowdb&#x2F;node</p>
+</li>
+<li><p>解决：</p>
+<ol>
+<li>把服务端逻辑移到服务端代码中</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//import &#123; Low &#125; from &#x27;lowdb&#x27;</span></span><br><span class="line"><span class="comment">//import &#123; JSONFile &#125; from &#x27;lowdb/node&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>把客户端组件转为服务端组件</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//&#x27;use client&#x27;</span><br></pre></td></tr></table></figure></li>
+</ul>
 
 </div> 
 
@@ -150,17 +163,12 @@
     <nav class="post-nav">
         <div class="prev-item">
            
-                <div class="icon arrow-left"></div>
-                <div class="post-link">
-                    <a href="/2024/01/27/webpack%E6%8A%A5%E9%94%99%E8%A7%A3%E5%86%B3/">Prev</a>
-                </div>
-            
         </div>
         <div class="next-item">
             
                 <div class="icon arrow-right"></div>
                 <div class="post-link">
-                  <a href="/2022/09/27/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">Next</a>  
+                  <a href="/2023/10/22/as%E9%85%8D%E7%BD%AE/">Next</a>  
                 </div>  
             
         </div>
